@@ -7,9 +7,9 @@ pipeline
         {
             steps
             {
-                 'g++ sample.cpp -o task5'
+                sh 'g++ sample.cpp -o task5'
                 echo 'Build stage Successful'
-                buil job: 'PES2UG20CS374-1'
+                build job: 'PES2UG20CS374-1'
             }
         }
 		
@@ -30,17 +30,12 @@ pipeline
         }
     }
 	
-    post {
+post {
         always {
-            script {
-                if (currentBuild.result == 'FAILURE') {
-                    echo 'Pipeline failed'
-                }
-		    
-		else {
-			echo 'Pipeline Successful Completed!'
-		}
-            }
+            echo 'Pipeline Successful Completed!'
+        }
+        failure {
+            echo 'Pipeline has failed.'
         }
     }
 }
