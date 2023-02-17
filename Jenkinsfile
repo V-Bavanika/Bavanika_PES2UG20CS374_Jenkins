@@ -7,9 +7,9 @@ pipeline
         {
             steps
             {
-                sh 'g++ sample.cpp -o task5'
+                 'g++ sample.cpp -o task5'
                 echo 'Build stage Successful'
-                build job: 'PES2UG20CS374-1'
+                buil job: 'PES2UG20CS374-1'
             }
         }
 		
