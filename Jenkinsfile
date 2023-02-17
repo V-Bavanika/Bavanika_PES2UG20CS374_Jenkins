@@ -25,7 +25,7 @@ pipeline
         stage('Deploy') 
 		{
             steps 
-                sh 'echo "Deployment Successful"
+                h 'echo "Deployment Successful"
             }
         }
     }
@@ -35,7 +35,7 @@ post {
             echo 'Pipeline Successful Completed!'
         }
         failure {
-            echo 'Pipeline has failed!'
+            echo 'Pipeline failed'
         }
     }
 }
