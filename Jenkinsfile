@@ -7,7 +7,7 @@ pipeline
         {
             steps
             {
-                sample.cpp -o task5'
+                sh 'g++ sample.cpp -o task5'
                 echo 'Build stage Successful'
                 build job: 'PES2UG20CS374-1'
             }
@@ -24,8 +24,8 @@ pipeline
 		
         stage('Deploy') 
 		{
-            steps {
-                sh 'echo "Deployment Successful"'
+            steps 
+                sh 'echo "Deployment Successful"
             }
         }
     }
